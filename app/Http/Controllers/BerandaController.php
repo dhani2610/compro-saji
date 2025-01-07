@@ -11,6 +11,10 @@ class BerandaController extends Controller
 {
   
 
+    public function landing(){
+        $data['page_title'] = 'Home';
+        return view('home', $data);
+    }
     public function register(){
         $data['page_title'] = 'Register';
         return view('backend.auth.register', $data);

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@redirectAdmin')->name('index');
+Route::get('/', 'BerandaController@landing')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin/register', 'BerandaController@register')->name('admin-register');
@@ -35,14 +35,28 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('admins', 'Backend\AdminsController', ['names' => 'admin.admins']);
 
 
-    Route::group(['prefix' => 'spip'], function () {
-        Route::get('/', 'Backend\SpipController@index')->name('spip');
-        Route::get('send-reminder/{id}', 'Backend\SpipController@sendEmail')->name('spip.mail.reminder');
-        Route::get('create', 'Backend\SpipController@create')->name('spip.create');
-        Route::post('store', 'Backend\SpipController@store')->name('spip.store');
-        Route::get('edit/{id}', 'Backend\SpipController@edit')->name('spip.edit');
-        Route::post('update/{id}', 'Backend\SpipController@update')->name('spip.update');
-        Route::get('destroy/{id}', 'Backend\SpipController@destroy')->name('spip.destroy');
+    Route::group(['prefix' => 'slider'], function () {
+        Route::get('/', 'Backend\SliderController@index')->name('slider');
+        Route::get('create', 'Backend\SliderController@create')->name('slider.create');
+        Route::post('store', 'Backend\SliderController@store')->name('slider.store');
+        Route::get('edit/{id}', 'Backend\SliderController@edit')->name('slider.edit');
+        Route::post('update/{id}', 'Backend\SliderController@update')->name('slider.update');
+        Route::get('destroy/{id}', 'Backend\SliderController@destroy')->name('slider.destroy');
+    });
+
+
+    Route::group(['prefix' => 'gallery'], function () {
+        Route::get('/', 'Backend\GalleryController@index')->name('gallery');
+        Route::get('create', 'Backend\GalleryController@create')->name('gallery.create');
+        Route::post('store', 'Backend\GalleryController@store')->name('gallery.store');
+        Route::get('edit/{id}', 'Backend\GalleryController@edit')->name('gallery.edit');
+        Route::post('update/{id}', 'Backend\GalleryController@update')->name('gallery.update');
+        Route::get('destroy/{id}', 'Backend\GalleryController@destroy')->name('gallery.destroy');
+    });
+
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', 'Backend\ProfileController@index')->name('profile');
+        Route::post('store', 'Backend\ProfileController@store')->name('profile.store');
     });
 
     // Login Routes

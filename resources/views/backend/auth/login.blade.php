@@ -15,7 +15,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logos/logo.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logos/Logo_SAJI.png') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,7 +60,7 @@
                             <a href="#" class="app-brand-link gap-2">
 
                                 <center>
-                                    <img src="{{ asset('assets/img/logos/logo.png') }}" style="max-width: 50%">
+                                    <img src="{{ asset('assets/img/logos/Logo_SAJI.png') }}" style="max-width: 50%">
                                 </center>
                             </a>
                         </div>
@@ -99,8 +99,6 @@
 
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-                                <a href="{{ url('admin/register') }}" class="btn btn-primary d-grid w-100 mt-2"
-                                    type="submit">Register</a>
                             </div>
                         </form>
 
