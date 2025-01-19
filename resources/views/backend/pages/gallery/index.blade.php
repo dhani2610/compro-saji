@@ -43,7 +43,6 @@
                                     <tr>
                                         <th>NO</th>
                                         <th>Title</th>
-                                        <th>Description</th>
                                         <th>Image</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -53,7 +52,6 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $item->title }}</td>
-                                            <td>{{ $item->description }}</td>
                                             <td>
                                                 <center>
                                                     <img src="{{ asset('assets/img/gallery/' . $item->image) }}"

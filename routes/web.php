@@ -59,6 +59,43 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('store', 'Backend\ProfileController@store')->name('profile.store');
     });
 
+    
+    Route::group(['prefix' => 'our-services'], function () {
+        Route::get('/', 'Backend\OurServicesController@index')->name('our-services');
+        Route::get('create', 'Backend\OurServicesController@create')->name('our-services.create');
+        Route::post('store', 'Backend\OurServicesController@store')->name('our-services.store');
+        Route::get('edit/{id}', 'Backend\OurServicesController@edit')->name('our-services.edit');
+        Route::post('update/{id}', 'Backend\OurServicesController@update')->name('our-services.update');
+        Route::get('destroy/{id}', 'Backend\OurServicesController@destroy')->name('our-services.destroy');
+    });
+
+
+    
+    Route::group(['prefix' => 'project'], function () {
+        Route::get('/', 'Backend\ProjectController@index')->name('project');
+        Route::get('create', 'Backend\ProjectController@create')->name('project.create');
+        Route::post('store', 'Backend\ProjectController@store')->name('project.store');
+        Route::get('edit/{id}', 'Backend\ProjectController@edit')->name('project.edit');
+        Route::post('update/{id}', 'Backend\ProjectController@update')->name('project.update');
+        Route::get('destroy/{id}', 'Backend\ProjectController@destroy')->name('project.destroy');
+    });
+
+    Route::group(['prefix' => 'footer'], function () {
+        Route::get('/', 'Backend\FooterController@index')->name('footer');
+        Route::post('store', 'Backend\FooterController@store')->name('footer.store');
+    });
+
+
+
+    Route::group(['prefix' => 'branding'], function () {
+        Route::get('/', 'Backend\BrandingController@index')->name('branding');
+        Route::get('create', 'Backend\BrandingController@create')->name('branding.create');
+        Route::post('store', 'Backend\BrandingController@store')->name('branding.store');
+        Route::get('edit/{id}', 'Backend\BrandingController@edit')->name('branding.edit');
+        Route::post('update/{id}', 'Backend\BrandingController@update')->name('branding.update');
+        Route::get('destroy/{id}', 'Backend\BrandingController@destroy')->name('branding.destroy');
+    });
+
     // Login Routes
     Route::get('/login', 'Backend\Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login/submit', 'Backend\Auth\LoginController@login')->name('admin.login.submit');

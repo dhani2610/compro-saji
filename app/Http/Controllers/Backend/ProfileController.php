@@ -32,10 +32,10 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         try {
-            $profile = \App\Models\Profile::first(); // Cek apakah data sudah ada
+            $profile = Profile::first(); 
 
             if (!$profile) {
-                $profile = new \App\Models\Profile();
+                $profile = new Profile();
             }
 
             // Validasi

@@ -26,7 +26,7 @@
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title text-center">Tambah</h4>
+                            <h4 class="header-title text-center">Edit</h4>
                             <hr>
                             <div class="row">
                                 <div class="col-lg-6">

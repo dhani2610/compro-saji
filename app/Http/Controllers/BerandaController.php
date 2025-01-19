@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Branding;
+use App\Models\Footer;
+use App\Models\Gallery;
+use App\Models\OurServices;
+use App\Models\Profile;
+use App\Models\Project;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,7 +20,14 @@ class BerandaController extends Controller
 
     public function landing(){
         $data['page_title'] = 'Home';
-        return view('home', $data);
+        $data['slider'] = Slider::orderBy('id','desc')->get();
+        $data['profile'] = Profile::first();
+        $data['our_services'] = OurServices::orderBy('id','desc')->get();
+        $data['branding'] = Branding::orderBy('id','asc')->get();
+        $data['project'] = Project::orderBy('id','asc')->get();
+        $data['gallery'] = Gallery::orderBy('id','asc')->get();
+        $data['footer'] = Footer::first();
+        return view('frontend.index', $data);
     }
     public function register(){
         $data['page_title'] = 'Register';
