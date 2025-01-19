@@ -79,6 +79,14 @@
             line-height: 1;
         }
 
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+                margin-top: 65px;
+                bottom: var(--swiper-pagination-bottom, -5px);
+                top: var(--swiper-pagination-top, auto);
+                left: 0;
+                width: 100%;
+            }
+
       
     </style>
 
@@ -120,7 +128,7 @@
 
         <div class="container section-title" data-aos="fade-up">
             <h2>Profil</h2>
-            <div><span class="description-title">Tentang Kami</span></div>
+            <div><span class="description-title">About Saji</span></div>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -154,23 +162,47 @@
         <div class="container">
 
             <div class="row gy-4">
-                @foreach ($our_services as $us)
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-item service-card">
-                            <center>
-                                <div class="icon flex-shrink-0">
-                                    <i class="bi bi-diagram-3"></i>
+                <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
+                    <script type="application/json" class="swiper-config">
+                    {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                        "delay": 5000
+                    },
+                    "slidesPerView": 2,
+                    "spaceBetween": 40,
+                    "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                    }
+                    }
+                </script>
+                    <div class="swiper-wrapper">
+                        @foreach ($our_services as $us)
+                            <div class="swiper-slide">
+                                <div class="row gy-4 event-item">
+                                    <div class="card-item service-card">
+                                        <center>
+                                            <div class="icon flex-shrink-0">
+                                                <i class="bi bi-diagram-3"></i>
+                                            </div>
+                                            <h4><a href="" class="">{{ $us->judul }}</a></h4>
+                                        </center>
+                                    </div>
                                 </div>
-                                <h4><a href="" class="">{{ $us->judul }}</a></h4>
-                            </center>
-                        </div>
-                    </div><!-- Card Item -->
-                @endforeach
+                            </div><!-- End Slider item -->
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
 
         </div>
 
     </section><!-- /Why Us Section -->
+
     <section id="branding" class="clients section light-background">
         <div class="container section-title" data-aos="fade-up">
             <h2>Branding</h2>
@@ -199,7 +231,6 @@
             <div><span class="description-title">Project</span></div>
         </div><!-- End Section Title -->
 
-        <img class="slider-bg" src="assets/img/events-bg.jpg" alt="" data-aos="fade-in">
 
         <div class="container">
 
@@ -271,7 +302,7 @@
     </section><!-- /Gallery Section -->
 
 
-    <!-- Contact Section -->
+    {{-- <!-- Contact Section -->
     <section id="contact" class="contact section">
 
         <!-- Section Title -->
@@ -286,5 +317,5 @@
                 frameborder="0" allowfullscreen=""></iframe>
         </div><!-- End Google Maps -->
 
-    </section><!-- /Contact Section -->
+    </section><!-- /Contact Section --> --}}
 @endsection

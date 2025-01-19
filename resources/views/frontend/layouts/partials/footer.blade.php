@@ -2,14 +2,14 @@
 
   <div class="container">
     <div class="row gy-3">
-      <div class="col-lg-4 col-md-6 d-flex">
+      {{-- <div class="col-lg-4 col-md-6 d-flex">
         <i class="bi bi-geo-alt icon"></i>
         <div class="address">
           <h4>Address</h4>
           <pre>{{ $footer->alamat }}</pre>
         </div>
 
-      </div>
+      </div> --}}
 
       <div class="col-lg-3 col-md-6 d-flex">
         <i class="bi bi-telephone icon"></i>
