@@ -215,6 +215,9 @@
                     <div class="col-xl-2 col-md-2 col-6 client-logo">
                         <img src="{{ asset('assets/img/branding/' . $bd->image) }}" class="img-fluid" alt="">
                         <br>
+                        <center>
+                            <div><span class="description-title text-center">{{ $bd->title }}</span></div>
+                        </center>
                     </div><!-- End Client Item -->
                 @endforeach
             </div>

@@ -20,7 +20,8 @@
 
       </span> --}}
             <img src="{{ asset('assets/img/logos/Logo_SAJI.png') }}" style="max-width: 30%">
-            <span class=" demo fw-bold ms-2" style="color: black">Dashboard</span>
+            <span class=" demo fw-bold ms-2" style="color: black"><br>Surya Amanah Jaya Indonesia
+                Catering & Associated Services</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
